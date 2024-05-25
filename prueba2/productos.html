@@ -42,35 +42,60 @@
     <div class="container mt-4">
         <h2>Productos</h2>
         <div class="row">
+            <!-- Tarjeta de Vegetales -->
             <div class="col-md-4 mb-4">
                 <div class="card">
                     <img src="https://static.vecteezy.com/system/resources/previews/007/109/445/non_2x/set-of-different-vegetables-cartoon-free-vector.jpg" class="card-img-top" alt="...">
                     <div class="card-body text-center">
                         <h5 class="card-title">Vegetales</h5>
-                        <a href="#" class="btn btn-primary">Ver más</a>
+                        <a href="#" class="btn btn-primary" data-toggle="collapse" data-target="#vegetalesCollapse">Ver más</a>
+                        <div class="collapse" id="vegetalesCollapse">
+                            <p class="card-text">Zanahorias - Las zanahorias son raíces comestibles de color naranja. Son una excelente fuente de vitamina A y antioxidantes. Son ideales para ensaladas, guisos y jugos. Precio: $1000 CLP</p>
+                            <p class="card-text">Lechugas - Las lechugas son hortalizas de hojas verdes utilizadas en ensaladas y otros platos. Son ricas en vitaminas y minerales esenciales para una alimentación saludable. Precio: $800 CLP</p>
+                            <p class="card-text">Tomates - Los tomates son frutos rojos comestibles muy versátiles en la cocina. Son una excelente fuente de vitamina C y antioxidantes. Precio: $1200 CLP</p>
+                            <p class="card-text">Espinacas - Las espinacas son hojas verdes comestibles ricas en hierro y otros nutrientes esenciales. Son ideales para ensaladas, batidos y salteados. Precio: $900 CLP</p>
+                            <p class="card-text">Brócoli - El brócoli es una verdura crucífera rica en vitaminas y antioxidantes. Es conocido por sus beneficios para la salud y su versatilidad en la cocina. Precio: $1100 CLP</p>
+                        </div>
                     </div>
                 </div>
             </div>
+
+            <!-- Tarjeta de Carne -->
             <div class="col-md-4 mb-4">
                 <div class="card">
                     <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ0_bvX7HKUo0DLApN3x_c0e2QoGo6v590Raw&s" class="card-img-top" alt="...">
                     <div class="card-body text-center">
                         <h5 class="card-title">Carne</h5>
-                        <a href="#" class="btn btn-primary">Ver más</a>
+                        <a href="#" class="btn btn-primary" data-toggle="collapse" data-target="#carneCollapse">Ver más</a>
+                        <div class="collapse" id="carneCollapse">
+                            <p class="card-text">Carne de Res - Carne de res magra y tierna. Ideal para asados. Precio: $5000 CLP</p>
+                            <p class="card-text">Carne de Pollo - Pechuga de pollo fresca y jugosa. Perfecta para preparar a la parrilla o al horno. Precio: $4000 CLP</p>
+                            <p class="card-text">Carne de Cerdo - Costillas de cerdo marinadas en salsa barbacoa. Deliciosas y suculentas. Precio: $4500 CLP</p>
+                            <p class="card-text">Carne de Cordero - Chuletas de cordero sazonadas con hierbas mediterráneas. Exquisitamente tiernas. Precio: $6000 CLP</p>
+                            <p class="card-text">Carne de Pavo - Pavo fresco, bajo en grasas y rico en proteínas. Perfecto para una cena saludable. Precio: $5500 CLP</p>
+                        </div>
                     </div>
                 </div>
             </div>
-            <div class="col-md-4 mb-4">
-                <div class="card">
-                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRtPgQiNdCRaQ082fYAUiol-5naYzxgHpTC0w&s" class="card-img-top" alt="...">
-                    <div class="card-body text-center">
-                        <h5 class="card-title">Frutos Secos</h5>
-                        <a href="#" class="btn btn-primary">Ver más</a>
-                    </div>
-                </div>
+
+<!-- Tarjetas de Frutos Secos -->
+<div class="col-md-4 mb-4">
+    <div class="card">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRtPgQiNdCRaQ082fYAUiol-5naYzxgHpTC0w&s" class="card-img-top" alt="...">
+        <div class="card-body text-center">
+            <h5 class="card-title">Frutos Secos</h5>
+            <a href="#" class="btn btn-primary" data-toggle="collapse" data-target="#frutosSecosCollapse">Ver más</a>
+            <div class="collapse" id="frutosSecosCollapse">
+                <p class="card-text">Nueces - Nueces frescas y crujientes. Ricas en omega-3 y antioxidantes. Precio: $3000 CLP</p>
+                <p class="card-text">Almendras - Almendras crujientes y deliciosas. Fuente de proteínas y grasas saludables. Precio: $2500 CLP</p>
+                <p class="card-text">Pistachos - Pistachos tostados y salados. Excelente fuente de fibra y proteínas. Precio: $2800 CLP</p>
+                <p class="card-text">Avellanas - Avellanas frescas y sabrosas. Rica en vitamina E y antioxidantes. Precio: $2700 CLP</p>
+                <p class="card-text">Anacardos - Anacardos crujientes y sabrosos. Rico en grasas saludables y minerales. Precio: $3200 CLP</p>
             </div>
         </div>
     </div>
+</div>
+
 
     <!-- Modal de inicio de sesión -->
     <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="loginModalLabel" aria-hidden="true">

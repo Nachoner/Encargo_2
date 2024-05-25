@@ -58,3 +58,10 @@ nav ul li a:hover {
     width: 1px;
     max-height: 555px;
 }
+
+.alert.mensaje {
+    color: red;
+    font-weight: bold;
+    margin-bottom: 15px;   
+
+}
