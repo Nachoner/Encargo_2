@@ -146,29 +146,135 @@
                     <div class="form-group">
                         <label for="firstName">Nombre</label>
                         <input type="text" class="form-control" id="firstName" placeholder="Ingrese su nombre" required>
+                        <span class="invalid-feedback" style="display: none;">Por favor, solo ingresar letras.</span>
                     </div>
                     <div class="form-group">
                         <label for="lastName">Apellido</label>
                         <input type="text" class="form-control" id="lastName" placeholder="Ingrese su apellido" required>
+                        <span class="invalid-feedback" style="display: none;">Por favor, solo ingresar letras.</span>
                     </div>
                     <div class="form-group">
                         <label for="phoneNumber">Número de Teléfono</label>
                         <input type="tel" class="form-control" id="phoneNumber" placeholder="Ingrese su número de teléfono" required>
+                        <span class="invalid-feedback" style="display: none;">Por favor, solo ingresar numeros</span>
                     </div>
                     <div class="form-group">
                         <label for="email">Correo electrónico</label>
                         <input type="email" class="form-control" id="email" placeholder="Ingrese su correo electrónico" required>
+                        <span class="invalid-feedback" style="display: none;">Por favor, ingrese un correo electrónico válido.</span>
                     </div>
                     <div class="form-group">
                         <label for="age">Edad</label>
                         <input type="number" class="form-control" id="age" placeholder="Ingrese su edad" min="18" required>
+                        <span class="invalid-feedback" style="display: none;">Por favor, ingrese una edad válida (mayor o igual a 18).</span>
                     </div>
                     <button type="submit" class="btn btn-primary">Registrarse</button>
                 </form>
             </div>
         </div>
     </div>
-</div>           
+</div>
+
+ <!-- Valida formulario con JavaScript -->
+ <script>
+    document.addEventListener("DOMContentLoaded", function() {
+        // Obtener referencia al formulario y a los campos
+        var registerForm = document.getElementById("registerForm");
+        var firstNameInput = document.getElementById("firstName");
+        var lastNameInput = document.getElementById("lastName");
+        var phoneNumberInput = document.getElementById("phoneNumber");
+        var emailInput = document.getElementById("email");
+        var ageInput = document.getElementById("age");
+
+        // Obtener referencia a los mensajes de error
+        var firstNameError = document.querySelector("#firstName + .invalid-feedback");
+        var lastNameError = document.querySelector("#lastName + .invalid-feedback");
+        var phoneNumberError = document.querySelector("#phoneNumber + .invalid-feedback");
+        var emailError = document.querySelector("#email + .invalid-feedback");
+        var ageError = document.querySelector("#age + .invalid-feedback");
+
+        // Función para validar solo letras en el nombre y apellido
+        function validateNameInput(input, errorElement) {
+            var regex = /^[a-zA-Z\s]*$/; // Solo letras y espacios permitidos
+            if (!regex.test(input)) {
+                errorElement.style.display = "block";
+                return false;
+            } else {
+                errorElement.style.display = "none";
+                return true;
+            }
+        }
+
+        // Función para validar solo números en el número de teléfono
+        function validatePhoneNumberInput(input, errorElement) {
+            var regex = /^\d+$/; // Solo números permitidos
+            if (!regex.test(input)) {
+                errorElement.style.display = "block";
+                return false;
+            } else {
+                errorElement.style.display = "none";
+                return true;
+            }
+        }
+
+        // Función para validar el correo electrónico
+        function validateEmailInput(input, errorElement) {
+            var regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; // Formato de correo electrónico válido
+            if (!regex.test(input)) {
+                errorElement.style.display = "block";
+                return false;
+            } else {
+                errorElement.style.display = "none";
+                return true;
+            }
+        }
+
+        // Función para validar la edad
+        function validateAgeInput(input, errorElement) {
+            // Edad debe ser un número mayor o igual a 18
+            if (isNaN(input) || parseInt(input) < 18) {
+                errorElement.style.display = "block";
+                return false;
+            } else {
+                errorElement.style.display = "none";
+                return true;
+            }
+        }
+
+        // Función de validación general para el formulario
+        function validateForm() {
+            var isValid = true;
+
+            // Validar nombre
+            isValid = validateNameInput(firstNameInput.value, firstNameError) && isValid;
+
+            // Validar apellido
+            isValid = validateNameInput(lastNameInput.value, lastNameError) && isValid;
+
+            // Validar número de teléfono
+            isValid = validatePhoneNumberInput(phoneNumberInput.value, phoneNumberError) && isValid;
+
+            // Validar correo electrónico
+            isValid = validateEmailInput(emailInput.value, emailError) && isValid;
+
+            // Validar edad
+            isValid = validateAgeInput(ageInput.value, ageError) && isValid;
+
+            return isValid;
+        }
+
+        // Agregar evento de escucha para el envío del formulario
+        registerForm.addEventListener("submit", function(event) {
+            // Validar el formulario antes de enviar
+            if (!validateForm()) {
+                // Evitar el envío del formulario si no es válido
+                event.preventDefault();
+            }
+        });
+    });
+</script>
+
+
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/jquery.validation/1.19.3/jquery.validate.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
