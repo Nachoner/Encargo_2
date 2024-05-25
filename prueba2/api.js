@@ -23,6 +23,12 @@ $(document).ready(function() {
 
         indicadoresDiv.html(indicadoresHtml);
     }).fail(function(jqxhr, textStatus, error) {
-        console.error('No se pudo traer la informacion :():', error);
+        const indicadoresDiv = $('#indicadores');
+        const errorHtml = `
+            <div class="alert alert-danger" role="alert">
+                No se pudo traer la información de la API. Por favor, inténtelo de nuevo más tarde.
+            </div>
+        `;
+        indicadoresDiv.html(errorHtml);
     });
 });
